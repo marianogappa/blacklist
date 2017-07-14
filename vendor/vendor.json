@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "MeHOAfYrBhN17UI8l6a+hQBD2/s=",
+			"path": "github.com/miekg/dns",
+			"revision": "0559e6d230af0a3a7273853cb6994ebea21bfbe5",
+			"revisionTime": "2017-07-09T06:56:13Z"
+		}
+	],
+	"rootPath": "github.com/movio/red/tools/blacklist"
+}
