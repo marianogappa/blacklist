@@ -11,7 +11,7 @@ func TestBlacklist(t *testing.T) {
 			"spam.dnsbl.sorbs.net",
 		})
 		ipv4            = "127.0.0.2"
-		blacklists, err = d.status(ipv4)
+		blacklists, err = d.Status(ipv4)
 	)
 
 	if !reflect.DeepEqual(blacklists, []string{"spam.dnsbl.sorbs.net"}) {

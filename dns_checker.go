@@ -6,16 +6,20 @@ import (
 	"sync"
 )
 
+// DNSChecker receives a list of BL domains (like zen.spamhaus.org) and provides
+// the Status method for checking if an IP is listed on them
 type DNSChecker struct {
 	domains []string
 	digger  *digger
 }
 
+// NewDNSChecker is the constructor for a DNSChecker
 func NewDNSChecker(domains []string) *DNSChecker {
 	return &DNSChecker{domains, &digger{}}
 }
 
-func (d *DNSChecker) status(ipv4 string) (blacklists []string, errors []error) {
+// Status looks for an A record for the supplied IPv4 address on all domains supplied to this DNSChecker
+func (d *DNSChecker) Status(ipv4 string) (blacklists []string, errors []error) {
 	var (
 		sIP = strings.Split(ipv4, ".")
 		rIP = fmt.Sprintf("%v.%v.%v.%v", sIP[3], sIP[2], sIP[1], sIP[0])
